@@ -1,6 +1,6 @@
 import React from "react";
 import { perfumes } from "../data";
-import SinglePerfume from "./Singleperfume";
+import SinglePerfume from "./SinglePgerfume";
 function Cart({ id, title, image, rating, price, oldPrice, itemsLeft }) {
   return (
     <div
