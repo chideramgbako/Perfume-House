@@ -1,6 +1,6 @@
 import React from "react";
 import { perfumes } from "../data";
-import SinglePerfume from "./Singleperfume";
+import SinglePerfume from "./SinglePerfume";
 const AllPerfumes = () => {
   return (
     <div className="d-flex flex-wrap gap-3">
