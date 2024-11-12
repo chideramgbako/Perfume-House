@@ -1,4 +1,7 @@
 import React from "react";
+import { IoStarSharp } from "react-icons/io5";
+import { useContext } from "react";
+import { CartContext } from "../Context";
 
 const SinglePerfume = ({
   id,
@@ -8,7 +11,10 @@ const SinglePerfume = ({
   itemsLeft,
   rating,
   oldPrice,
+  inCart
 }) => {
+
+  const {addToCart} = useContext(CartContext)
   return (
     <div
       style={{ width: "256.62px" }}
@@ -18,7 +24,9 @@ const SinglePerfume = ({
       <div className="p-3">
         <h2 className="fs-6 fw-bold mb-2"> {title} </h2>
         <div className="d-flex gap-2">
-          <p className="text-dark fw-bold">stars {rating}</p>
+          <p className="text-dark fw-bold">
+            <IoStarSharp /> <IoStarSharp /> <IoStarSharp /> {rating}
+          </p>
           <p> ({itemsLeft}) </p>
         </div>
         <div className="d-flex gap-2">
@@ -26,10 +34,12 @@ const SinglePerfume = ({
           <h2 className="fs-5 text-decoration-line-through"> #{oldPrice}</h2>
         </div>
         <button
-          style={{ height: "40px" }}
-          className="w-100 rounded-2 main-color-bg text-white border-0"
+          style={{ height: "40px", cursor: inCart ? "not-allowed" : "pointer"}}
+          className={`w-100 rounded-2 main-color-bg text-white border-0  ${inCart ? "bg-secondary-subtle" : "main-color-bg"}`}
+          onClick={()=> addToCart({image, title, price, id})}
+          disabled={inCart}
         >
-          Add To Cart
+          {inCart ? "Added to cart" : "Add to cart"}
         </button>
       </div>
     </div>

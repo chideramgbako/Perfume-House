@@ -29,7 +29,7 @@ setPassword("")
   }
   return (
     <div className="formbg ">
-      <Link to="/">
+      <Link to="/" id="link-form">
         <div className="position-absolute top-0 start-0 p-5">
           <span className="main-color-bg text-white rounded-circle p-3">
             PZ
@@ -38,7 +38,8 @@ setPassword("")
         </div>
       </Link>
       <div className="container">
-        <form
+        <form 
+        id="second-form"
         onSubmit={handleSubmit}
           className="mx-auto bg-white p-5 shadow-lg rounded-2"
           style={{ width: "642px" }}

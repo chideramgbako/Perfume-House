@@ -29,3 +29,13 @@
    justify-content: center;
    align-items: center;
 }
+
+#second-form{
+max-width: 100%;
+}
+
+#link-form{
+  position: absolute;
+
+}
+
